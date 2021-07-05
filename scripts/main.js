@@ -16,7 +16,7 @@ if ('booksData' in localStorage) {
 const addBook = () => {
   books.push(new Book(form[0].value, form[1].value));
   localStorage.setItem('booksData', JSON.stringify(books));
-}
+};
 
 form.addEventListener('submit', addBook);
 
@@ -25,7 +25,6 @@ bookList.style.listStyle = 'none';
 bookList.style.padding = '0';
 
 for (let i = 0; i < books.length; i += 1) {
-
   const listItem = document.createElement('li');
   listItem.style.marginBottom = '10px';
   bookList.appendChild(listItem);
