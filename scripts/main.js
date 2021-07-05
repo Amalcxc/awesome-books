@@ -42,6 +42,8 @@ for(let i = 0; i < books.length; i+=1){
   removeButton.className = 'remove-button';
   removeButton.textContent = 'Remove';
   listItem.appendChild(removeButton);
+  const divider = document.createElement('hr');
+  listItem.appendChild(divider);
 }
 
 const remBtnList = Array.from(document.getElementsByClassName('remove-button'));
