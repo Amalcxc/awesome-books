@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./scripts/main.js" defer></script>
   <title>Awesome Books</title>
 </head>
 <body>
@@ -11,10 +12,10 @@
   </header>
   <main>
     <section id="books">
-      <ul id="listed-book"></ul>
-      <form action="#">
-        <input type="text" id="book-name" name="book-name" placeholder="Title" required><br>
-        <input type="text" id="author-name" name="author-name" placeholder="Author" required><br>
+      <ul id="listed-books"></ul>
+      <form id="form">
+        <input type="text" id="book-name" name="book-name" placeholder="Title" required><br><br>
+        <input type="text" id="author-name" name="author-name" placeholder="Author" required><br><br>
         <input type="submit" value="Add">
       </form>
     </section>
