@@ -1,3 +1,7 @@
+/* eslint-disable max-classes-per-file */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-use-before-define */
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -5,52 +9,60 @@ class Book {
   }
 }
 
-let books = [];
+class ListedBooks {
+  constructor() {
+    this.books = [];
+  }
 
-const form = document.getElementById('form');
+  addBook(ev) {
+    listedBooks.books.push(new Book(ev.srcElement[0].value, ev.srcElement[1].value));
+    localStorage.setItem('booksData', JSON.stringify(listedBooks.books));
+  }
 
-if ('booksData' in localStorage) {
-  books = JSON.parse(localStorage.getItem('booksData'));
+  filterBooks(ev) {
+    if (ev.target && ev.target.nodeName === 'BUTTON') {
+      listedBooks.books = listedBooks.books.filter(
+        (book) => book !== listedBooks.books[ev.target.className],
+      );
+      localStorage.setItem('booksData', JSON.stringify(listedBooks.books));
+      window.location.reload();
+    }
+  }
 }
 
-const addBook = () => {
-  books.push(new Book(form[0].value, form[1].value));
-  localStorage.setItem('booksData', JSON.stringify(books));
-};
+let listedBooks = new ListedBooks();
 
-const filterBooks = (i) => {
-  books = books.filter((book) => book !== books[i]);
-  localStorage.setItem('booksData', JSON.stringify(books));
-  window.location.reload();
-};
+if ('booksData' in localStorage) {
+  listedBooks.books = JSON.parse(localStorage.getItem('booksData'));
+}
 
-form.addEventListener('submit', addBook);
-
+const form = document.getElementById('form');
 const bookList = document.getElementById('listed-books');
+
 bookList.style.listStyle = 'none';
 bookList.style.padding = '0';
 
-for (let i = 0; i < books.length; i += 1) {
+for (let i = 0; i < listedBooks.books.length; i += 1) {
   const listItem = document.createElement('li');
   listItem.style.marginBottom = '10px';
   bookList.appendChild(listItem);
   let para = document.createElement('p');
   para.style.display = 'block';
   para.style.margin = '0';
-  para.textContent = books[i].title;
+  para.textContent = listedBooks.books[i].title;
   listItem.appendChild(para);
   para = document.createElement('p');
   para.style.display = 'block';
   para.style.margin = '0';
-  para.textContent = books[i].author;
+  para.textContent = listedBooks.books[i].author;
   listItem.appendChild(para);
   const removeButton = document.createElement('button');
-  removeButton.className = 'remove-button';
+  removeButton.className = i;
   removeButton.textContent = 'Remove';
   listItem.appendChild(removeButton);
-  removeButton.addEventListener('click', () => {
-    filterBooks(i);
-  });
   const divider = document.createElement('hr');
   listItem.appendChild(divider);
 }
+
+form.addEventListener('submit', listedBooks.addBook);
+bookList.addEventListener('click', listedBooks.filterBooks);
