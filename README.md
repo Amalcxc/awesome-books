@@ -2,6 +2,7 @@
 
 ## website that allows users to add/remove books from a list.
 
+![Website screenshot](./screenshot.png)
 
 # Built With
 - HTML 
