@@ -1,3 +1,7 @@
+/* eslint-disable max-classes-per-file */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-use-before-define */
+
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -15,9 +19,11 @@ class ListedBooks {
     localStorage.setItem('booksData', JSON.stringify(listedBooks.books));
   }
 
-  filterBooks (ev) {
-    if(ev.target && ev.target.nodeName == "BUTTON"){
-      listedBooks.books = listedBooks.books.filter((book) => book !== listedBooks.books[ev.target.className]);
+  filterBooks(ev) {
+    if (ev.target && ev.target.nodeName === 'BUTTON') {
+      listedBooks.books = listedBooks.books.filter(
+        (book) => book !== listedBooks.books[ev.target.className],
+      );
       localStorage.setItem('booksData', JSON.stringify(listedBooks.books));
       window.location.reload();
     }
