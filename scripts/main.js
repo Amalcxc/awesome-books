@@ -62,3 +62,8 @@ if (bookItem.length > 0) {
 
 form.addEventListener('submit', listedBooks.addBook);
 bookList.addEventListener('click', listedBooks.filterBooks);
+
+var DateTime = luxon.DateTime;
+const time = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+const timeSection = document.getElementById('time');
+timeSection.innerText = time;
