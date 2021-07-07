@@ -46,11 +46,16 @@ abSection.insertBefore(bookList, form);
 for (let i = 0; i < listedBooks.books.length; i += 1) {
   const listItem = document.createElement('li');
   listItem.className = 'book-list-item';
-  listItem.innerHTML = `<p>${listedBooks.books[i].title}</p>
-  <p>${listedBooks.books[i].author}</p>
-  <button class="${i}">Remove</button>
-  <hr>`;
+  listItem.innerHTML = `<p>${listedBooks.books[i].title} by ${listedBooks.books[i].author}</p>
+  <button class="${i}">Remove</button>`;
   bookList.appendChild(listItem);
+}
+
+const bookItem = document.getElementsByClassName('book-list-item');
+
+if (bookItem.length > 0) {
+  const bookListDivider = document.createElement('hr');
+  abSection.insertBefore(bookListDivider, form);
 }
 
 form.addEventListener('submit', listedBooks.addBook);
