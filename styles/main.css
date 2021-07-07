@@ -61,6 +61,14 @@ body {
   cursor: pointer;
   font-weight: 700;
   padding: 3px;
+  transition: all 100ms ease;
+}
+
+.book-list-item > button:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
 }
 
 .books > hr {
