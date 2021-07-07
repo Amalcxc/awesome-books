@@ -56,6 +56,8 @@ const bookItem = document.getElementsByClassName('book-list-item');
 if (bookItem.length > 0) {
   const bookListDivider = document.createElement('hr');
   abSection.insertBefore(bookListDivider, form);
+} else {
+  bookList.remove();
 }
 
 form.addEventListener('submit', listedBooks.addBook);
