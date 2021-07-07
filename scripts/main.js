@@ -36,32 +36,21 @@ if ('booksData' in localStorage) {
   listedBooks.books = JSON.parse(localStorage.getItem('booksData'));
 }
 
+const abSection = document.getElementById('books');
 const form = document.getElementById('form');
-const bookList = document.getElementById('listed-books');
 
-bookList.style.listStyle = 'none';
-bookList.style.padding = '0';
+const bookList = document.createElement('ul');
+bookList.className = 'listed-books';
+abSection.insertBefore(bookList, form);
 
 for (let i = 0; i < listedBooks.books.length; i += 1) {
   const listItem = document.createElement('li');
-  listItem.style.marginBottom = '10px';
+  listItem.className = 'book-list-item';
+  listItem.innerHTML = `<p>${listedBooks.books[i].title}</p>
+  <p>${listedBooks.books[i].author}</p>
+  <button class="${i}">Remove</button>
+  <hr>`;
   bookList.appendChild(listItem);
-  let para = document.createElement('p');
-  para.style.display = 'block';
-  para.style.margin = '0';
-  para.textContent = listedBooks.books[i].title;
-  listItem.appendChild(para);
-  para = document.createElement('p');
-  para.style.display = 'block';
-  para.style.margin = '0';
-  para.textContent = listedBooks.books[i].author;
-  listItem.appendChild(para);
-  const removeButton = document.createElement('button');
-  removeButton.className = i;
-  removeButton.textContent = 'Remove';
-  listItem.appendChild(removeButton);
-  const divider = document.createElement('hr');
-  listItem.appendChild(divider);
 }
 
 form.addEventListener('submit', listedBooks.addBook);
