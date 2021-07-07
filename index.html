@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/main.css">
   <script src="./scripts/main.js" defer></script>
   <title>Awesome Books</title>
 </head>
 <body>
-  <header>
-    <h1>Awesome Books</h1>
-  </header>
   <main>
-    <section id="books">
-      <ul id="listed-books"></ul>
-      <form id="form">
-        <input type="text" id="book-name" name="book-name" placeholder="Title" required><br><br>
-        <input type="text" id="author-name" name="author-name" placeholder="Author" required><br><br>
+    <section id="books" class="books">
+      <header class="main-header">
+        <h1 class="main-title">All awesome books</h1>
+      </header>
+      <form id="form" class="form">
+        <h2 class="add-book">Add a New book</h2>
+        <input type="text" id="book-name" name="book-name" placeholder="Title" required>
+        <input type="text" id="author-name" name="author-name" placeholder="Author" required>
         <input type="submit" value="Add">
       </form>
     </section>

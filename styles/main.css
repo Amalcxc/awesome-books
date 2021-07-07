@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-size: 10px;
+}
+
+.main-header {
+  margin-bottom: 18px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.books {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+  width: 90%;
+  max-width: 610px;
+}
+
+.listed-books {
+  list-style: none;
+  border: 3px solid #333;
+  margin-bottom: 20px;
+}
+
+.book-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 9px;
+}
+
+.book-list-item:nth-child(odd) {
+  background: #ddd;
+}
+
+.book-list-item > p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.book-list-item > button {
+  background: #fff;
+  border: 1px solid #333;
+  box-shadow: 2px 2px #333;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 3px;
+  transition: all 100ms ease;
+}
+
+.book-list-item > button:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.books > hr {
+  border: 2px solid #333;
+  position: relative;
+  left: 35%;
+  width: 30%;
+  margin: 30px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+}
+
+.form input[type="text"] {
+  margin: 5px;
+  border: 3px solid black;
+  padding: 3px;
+}
+
+.form input[type="submit"] {
+  background: #fff;
+  border: 1px solid #333;
+  box-shadow: 2px 2px #333;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 3px;
+  transition: all 100ms ease;
+  align-self: flex-end;
+}
+
+.add-book {
+  align-self: center;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.form input[type="submit"]:hover {
+  background: #333;
+  color: #fff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}

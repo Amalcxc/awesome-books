@@ -1,21 +1,24 @@
-# awesome-books
+# Awesome Books
 
-## website that allows users to add/remove books from a list.
+Website that allows users to add/remove books from a list.
 
 ![Website screenshot](./screenshot.png)
 
 # Built With
-- HTML 
+
+- HTML
+- CSS
 - JavaScript
 
-# live Demo 
-- [Awesome-books](https://alonsofl.github.io/awesome-books/)
+# Live Demo
+
+- [Awesome Books](https://alonsofl.github.io/awesome-books/)
 
 # Getting Started
-  - Use your github account and your terminal to clone this repository to your computer:
-  - git clone https://github.com/alonsofl/awesome-books.git
-  - Go to the cloned directory: cd awesome-books
 
+  - Use your github account and your terminal to clone this repository to your computer.
+  - git clone https://github.com/alonsofl/awesome-books.git
+  - Go to the cloned directory: cd awesome-books/
 
 # Authors
 
@@ -32,13 +35,14 @@
 - LinkedIn: [Amal Hersi](https://www.linkedin.com/in/amal-hersi-a29583205/)
 
 # 🤝 Contributing
-- Contributions, issues, and feature requests are welcome!
 
+- Contributions, issues, and feature requests are welcome!
 - Feel free to check the issues page.
 
 # Show your support
+
 - Give a ⭐️ if you like this project!
 
-
 # 📝 License
+
 - This project is MIT licensed.
