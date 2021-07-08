@@ -68,3 +68,29 @@ var DateTime = luxon.DateTime;
 const time = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 const timeSection = document.getElementById('time');
 timeSection.innerText = time;
+
+const list = document.getElementById('list');
+const addNew = document.getElementById('new');
+const contact = document.getElementById('contact');
+
+const addNewSection = document.getElementById('add-new');
+const contactSection = document.getElementById('contactSection');
+
+list.addEventListener('click', function(){
+  abSection.style.display = 'block';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'none';
+})
+
+addNew.addEventListener('click', function(){
+  abSection.style.display = 'none';
+  addNewSection.style.display = 'block';
+  contactSection.style.display = 'none';
+})
+
+contact.addEventListener('click', function(){
+  abSection.style.display = 'none';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'block';
+})
+

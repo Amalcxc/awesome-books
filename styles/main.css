@@ -155,13 +155,40 @@ main {
   align-self: center;
   color: #333;
   font-size: 2.7rem;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
-footer {
+.footer {
   border: 2px solid #333;
   width: 90%;
   max-width: 720px;
   padding: 9px;
-  margin: 30px auto;
+  position: fixed;
+  margin: 4px auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 99;
+  background: white;
+}
+
+.h2 {
+  text-align: center;
+}
+
+.p-text {
+  font-size:1.40rem;
+  font-family: monospace;
+  margin: 24px;
+}
+
+.ul {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  margin-left: 10%;
+  font-weight: 600;
+}
+
+#add-new, #contactSection {
+  display: none;
 }
