@@ -1,6 +1,8 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
 
 class Book {
   constructor(title, author) {
@@ -41,7 +43,7 @@ const form = document.getElementById('form');
 
 const bookList = document.createElement('ul');
 bookList.className = 'listed-books';
-abSection.insertBefore(bookList, form);
+abSection.appendChild(bookList);
 
 for (let i = 0; i < listedBooks.books.length; i += 1) {
   const listItem = document.createElement('li');
@@ -51,14 +53,45 @@ for (let i = 0; i < listedBooks.books.length; i += 1) {
   bookList.appendChild(listItem);
 }
 
+form.addEventListener('submit', listedBooks.addBook);
+bookList.addEventListener('click', listedBooks.filterBooks);
+
+// Remove Book List
+
 const bookItem = document.getElementsByClassName('book-list-item');
 
-if (bookItem.length > 0) {
-  const bookListDivider = document.createElement('hr');
-  abSection.insertBefore(bookListDivider, form);
-} else {
+if (bookItem.length === 0) {
   bookList.remove();
 }
 
-form.addEventListener('submit', listedBooks.addBook);
-bookList.addEventListener('click', listedBooks.filterBooks);
+// Time
+
+const DateTime = luxon.DateTime;
+const time = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
+const timeSection = document.getElementById('time');
+timeSection.innerText = time;
+
+const list = document.getElementById('list');
+const addNew = document.getElementById('new');
+const contact = document.getElementById('contact');
+
+const addNewSection = document.getElementById('add-new');
+const contactSection = document.getElementById('contactSection');
+
+list.addEventListener('click', () => {
+  abSection.style.display = 'block';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'none';
+});
+
+addNew.addEventListener('click', () => {
+  abSection.style.display = 'none';
+  addNewSection.style.display = 'block';
+  contactSection.style.display = 'none';
+});
+
+contact.addEventListener('click', () => {
+  abSection.style.display = 'none';
+  addNewSection.style.display = 'none';
+  contactSection.style.display = 'block';
+});

@@ -5,21 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.css">
   <script src="./scripts/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
   <title>Awesome Books</title>
 </head>
 <body>
+  <header>
+    <nav class="main-nav">
+      <a href="./index.html" class="nav-logo"><h1>Awesome Books</h1></a>
+      <ul class="nav-links">
+        <li class="nav-link-item" id="list"><a href="#">List</a>|</li>
+        <li class="nav-link-item" id="new"><a href="#">Add new</a>|</li>
+        <li class="nav-link-item" id="contact"><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="time"></div>
+  </header>
   <main>
     <section id="books" class="books">
-      <header class="main-header">
-        <h1 class="main-title">All awesome books</h1>
-      </header>
+      <h2 class="main-title">All awesome books</h2>
+    </section>
+    <section id="add-new">
       <form id="form" class="form">
-        <h2 class="add-book">Add a New book</h2>
+        <h2 class="add-book h2">Add a new book</h2>
         <input type="text" id="book-name" name="book-name" placeholder="Title" required>
         <input type="text" id="author-name" name="author-name" placeholder="Author" required>
         <input type="submit" value="Add">
       </form>
     </section>
+    <section id="contactSection">
+      <h2 class="add-book h2">Contact information</h2>
+      <p class="p-text">Do have any questions or you just want say 'Hello' you can reach out to us! </p>
+      <ul class = "ul">
+        <li>Our E-mail: Mail@mail.com</li>
+        <li>Our phone number: 0000000001</li>
+        <li>Our Address: Mail@mail.com</li>
+      </ul>
+    </section>
+
   </main>
+  <footer class="footer">Copyright &copy; 2021 Awesome Books</footer>
 </body>
 </html>
