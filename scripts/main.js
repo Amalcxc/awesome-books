@@ -1,6 +1,8 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-use-before-define */
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
 
 class Book {
   constructor(title, author) {
@@ -64,7 +66,7 @@ if (bookItem.length === 0) {
 
 // Time
 
-var DateTime = luxon.DateTime;
+const DateTime = luxon.DateTime;
 const time = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 const timeSection = document.getElementById('time');
 timeSection.innerText = time;
@@ -76,21 +78,20 @@ const contact = document.getElementById('contact');
 const addNewSection = document.getElementById('add-new');
 const contactSection = document.getElementById('contactSection');
 
-list.addEventListener('click', function(){
+list.addEventListener('click', () => {
   abSection.style.display = 'block';
   addNewSection.style.display = 'none';
   contactSection.style.display = 'none';
-})
+});
 
-addNew.addEventListener('click', function(){
+addNew.addEventListener('click', () => {
   abSection.style.display = 'none';
   addNewSection.style.display = 'block';
   contactSection.style.display = 'none';
-})
+});
 
-contact.addEventListener('click', function(){
+contact.addEventListener('click', () => {
   abSection.style.display = 'none';
   addNewSection.style.display = 'none';
   contactSection.style.display = 'block';
-})
-
+});

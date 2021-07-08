@@ -55,7 +55,7 @@ header {
   color: #00f;
 }
 
-time {
+#time {
   font-size: 1.2rem;
 }
 
@@ -178,7 +178,7 @@ main {
 }
 
 .p-text {
-  font-size:1.40rem;
+  font-size: 1.4rem;
   font-family: monospace;
   margin: 24px;
 }
@@ -190,7 +190,8 @@ main {
   font-weight: 600;
 }
 
-#add-new, #contactSection {
+#add-new,
+#contactSection {
   display: none;
   margin-top: 10%;
 }
