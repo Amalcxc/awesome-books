@@ -41,7 +41,7 @@ const form = document.getElementById('form');
 
 const bookList = document.createElement('ul');
 bookList.className = 'listed-books';
-abSection.insertBefore(bookList, form);
+abSection.appendChild(bookList);
 
 for (let i = 0; i < listedBooks.books.length; i += 1) {
   const listItem = document.createElement('li');
@@ -51,17 +51,18 @@ for (let i = 0; i < listedBooks.books.length; i += 1) {
   bookList.appendChild(listItem);
 }
 
+form.addEventListener('submit', listedBooks.addBook);
+bookList.addEventListener('click', listedBooks.filterBooks);
+
+// Remove Book List
+
 const bookItem = document.getElementsByClassName('book-list-item');
 
-if (bookItem.length > 0) {
-  const bookListDivider = document.createElement('hr');
-  abSection.insertBefore(bookListDivider, form);
-} else {
+if (bookItem.length === 0) {
   bookList.remove();
 }
 
-form.addEventListener('submit', listedBooks.addBook);
-bookList.addEventListener('click', listedBooks.filterBooks);
+// Time
 
 var DateTime = luxon.DateTime;
 const time = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
