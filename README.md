@@ -2,7 +2,9 @@
 
 Website that allows users to add/remove books from a list.
 
-![Website screenshot](./screenshot.png)
+![Website screenshot](./screenshot1.png)
+![Website screenshot](./screenshot2.png)
+![Website screenshot](./screenshot3.png)
 
 # Built With
 
